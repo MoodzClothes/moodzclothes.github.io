@@ -5,23 +5,39 @@
 <title>Tee-shirt Noir Détails — Moodz Clothes</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-body{margin:0;font-family:Arial;background:#0b0b0f;color:white}
-.container{max-width:900px;margin:auto;padding:40px 20px}
-img{width:100%;max-width:420px;border-radius:15px}
-.price{color:#00ffcc;font-size:24px;font-weight:bold}
-button{width:100%;padding:15px;margin-top:20px;background:white;border:none;font-weight:bold;cursor:pointer}
-a{color:white;text-decoration:none}
+body{margin:0;font-family:Inter,Arial;background:#070709;color:white}
+a{color:#aaa;text-decoration:none}
+.container{max-width:1200px;margin:auto;padding:40px}
+.product{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+img{width:100%;border-radius:30px}
+h1{font-size:36px;margin:0}
+.price{color:#00ffcc;font-size:28px;margin:15px 0}
+select,button{width:100%;padding:16px;margin-top:20px;font-size:16px;border:none}
+button{background:white;font-weight:700;cursor:pointer}
+@media(max-width:900px){.product{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<div class="container">
-<a href="index.html">← Retour</a>
+
+<a href="index.html">← Retour boutique</a>
+
+<div class="container product">
+<img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=1000&q=80">
+
+<div>
 <h1>Tee-shirt Noir avec Détails</h1>
-<img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=700&q=80">
-<p class="price">24,99€</p>
-<p>Tee-shirt noir oversize avec détails graphiques streetwear. Look affirmé.</p>
-<select><option>S</option><option>M</option><option>L</option><option>XL</option></select>
-<button>Commander via Instagram</button>
+<div class="price">24,99€</div>
+<p>Tee-shirt noir oversize avec détails graphiques streetwear. Style affirmé.</p>
+
+<select>
+<option>S</option><option>M</option><option>L</option><option>XL</option>
+</select>
+
+<button onclick="window.open('https://instagram.com/moodzclothes','_blank')">
+Commander via Instagram
+</button>
 </div>
+</div>
+
 </body>
 </html>
