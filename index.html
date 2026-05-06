@@ -5,16 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Moodz Clothes</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --bg:#0a0a0a;
+  --bg:#0b0b0f;
   --card:#151515;
-  --card-hover:#1f1f1f;
-  --accent:#00ff99;
+  --accent:#7c4dff;
+  --accent2:#00ffcc;
   --text:#ffffff;
   --muted:#aaaaaa;
 }
@@ -28,20 +26,18 @@ body{
   font-family:'Montserrat',sans-serif;
   background:var(--bg);
   color:var(--text);
-  scroll-behavior:smooth;
 }
 
 /* NAV */
 nav{
   position:fixed;
   top:0;
-  left:0;
   width:100%;
   display:flex;
   justify-content:space-between;
   align-items:center;
   padding:15px 25px;
-  background:rgba(0,0,0,0.65);
+  background:rgba(0,0,0,0.7);
   backdrop-filter: blur(10px);
   z-index:1000;
 }
@@ -49,20 +45,17 @@ nav{
 nav h2{
   margin:0;
   letter-spacing:3px;
-  font-size:18px;
 }
 
 nav a{
   color:white;
-  text-decoration:none;
   margin-left:15px;
+  text-decoration:none;
   font-size:13px;
-  opacity:0.8;
 }
 
 nav a:hover{
-  opacity:1;
-  color:var(--accent);
+  color:var(--accent2);
 }
 
 /* HERO */
@@ -74,49 +67,45 @@ nav a:hover{
   align-items:center;
   text-align:center;
   background:radial-gradient(circle at top, #1a1a1a, #000);
-  padding:0 20px;
 }
 
 .hero h1{
-  font-size:64px;
+  font-size:65px;
   margin:0;
   letter-spacing:6px;
 }
 
 .hero span{
-  color:var(--accent);
+  color:var(--accent2);
 }
 
 .hero p{
   color:var(--muted);
-  margin-top:10px;
-  font-size:15px;
 }
 
 .btn{
-  margin-top:25px;
-  padding:12px 28px;
+  margin-top:20px;
+  padding:12px 25px;
   border:none;
   background:white;
-  color:black;
   font-weight:bold;
   cursor:pointer;
   transition:0.3s;
 }
 
 .btn:hover{
-  background:var(--accent);
+  background:var(--accent2);
   transform:scale(1.05);
 }
 
-/* SECTIONS */
+/* SECTION */
 section{
   padding:80px 20px;
   text-align:center;
 }
 
 h2{
-  font-size:28px;
+  font-size:30px;
   margin-bottom:40px;
 }
 
@@ -130,35 +119,25 @@ h2{
 
 .card{
   background:var(--card);
-  padding:20px;
   width:250px;
+  padding:15px;
   border-radius:15px;
   transition:0.3s;
-  position:relative;
 }
 
 .card:hover{
   transform:translateY(-8px);
-  background:var(--card-hover);
 }
 
-.card::before{
-  content:"DROP";
-  position:absolute;
-  top:10px;
-  right:-30px;
-  transform:rotate(45deg);
-  background:var(--accent);
-  color:black;
-  font-size:10px;
-  padding:5px 40px;
-  font-weight:bold;
+.card img{
+  width:100%;
+  border-radius:10px;
+  margin-bottom:10px;
 }
 
 .price{
-  color:var(--accent);
+  color:var(--accent2);
   font-weight:bold;
-  margin:10px 0;
 }
 
 .card button{
@@ -169,38 +148,35 @@ h2{
 .about{
   background:#111;
   color:var(--muted);
-  padding:80px 20px;
 }
 
-/* CTA */
-.cta a{
+/* INSTAGRAM */
+.insta{
   display:inline-block;
-  margin-top:10px;
-  padding:12px 28px;
-  background:white;
+  padding:12px 25px;
+  background:linear-gradient(45deg,var(--accent),var(--accent2));
   color:black;
-  text-decoration:none;
   font-weight:bold;
+  text-decoration:none;
   transition:0.3s;
 }
 
-.cta a:hover{
-  background:var(--accent);
+.insta:hover{
+  transform:scale(1.05);
 }
 
 /* FOOTER */
 footer{
-  padding:25px;
+  padding:20px;
   text-align:center;
   color:#666;
   border-top:1px solid #222;
-  font-size:12px;
 }
 
 /* MOBILE */
 @media(max-width:768px){
   .hero h1{
-    font-size:38px;
+    font-size:40px;
   }
 
   .products{
@@ -209,6 +185,7 @@ footer{
   }
 }
 </style>
+
 </head>
 
 <body>
@@ -233,25 +210,49 @@ footer{
 
 <!-- SHOP -->
 <section id="shop">
-  <h2>DROP 01</h2>
+  <h2>🔥 DROP 01 — COLLECTION</h2>
 
   <div class="products">
 
     <div class="card">
-      <h3>Hoodie Oversize</h3>
+      <img src="https://via.placeholder.com/300x300">
+      <h3>Hoodie Oversize Black</h3>
       <p class="price">29,99€</p>
       <button class="btn">Commander</button>
     </div>
 
     <div class="card">
-      <h3>T-Shirt Loose</h3>
+      <img src="https://via.placeholder.com/300x300">
+      <h3>Hoodie Grey Wash</h3>
+      <p class="price">34,99€</p>
+      <button class="btn">Commander</button>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/300x300">
+      <h3>T-Shirt Heavy Cotton</h3>
       <p class="price">19,99€</p>
       <button class="btn">Commander</button>
     </div>
 
     <div class="card">
-      <h3>Baggy Pants</h3>
-      <p class="price">34,99€</p>
+      <img src="https://via.placeholder.com/300x300">
+      <h3>T-Shirt Moodz Graphic</h3>
+      <p class="price">24,99€</p>
+      <button class="btn">Commander</button>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/300x300">
+      <h3>Baggy Pants Fit</h3>
+      <p class="price">39,99€</p>
+      <button class="btn">Commander</button>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/300x300">
+      <h3>Street Cap Moodz</h3>
+      <p class="price">14,99€</p>
       <button class="btn">Commander</button>
     </div>
 
@@ -262,15 +263,17 @@ footer{
 <section class="about" id="about">
   <h2>ABOUT</h2>
   <p>
-    Moodz Clothes est une marque streetwear inspirée des émotions, des vibes et de la culture urbaine.
-    Chaque pièce représente un état d’esprit.
+    Moodz Clothes est une marque streetwear basée sur les vibes, les émotions et la culture urbaine.
+    Chaque drop représente un mood différent.
   </p>
 </section>
 
 <!-- INSTAGRAM -->
-<section class="cta" id="contact">
+<section id="contact">
   <h2>FOLLOW US</h2>
- <a href="https://instagram.com/moodzclothes" target="_blank">INSTAGRAM</a>
+  <a class="insta" href="https://instagram.com/moodzclothes" target="_blank">
+    INSTAGRAM
+  </a>
 </section>
 
 <footer>
@@ -279,16 +282,6 @@ footer{
 
 </body>
 </html>
-.insta{
-  display:inline-block;
-  padding:12px 25px;
-  background:linear-gradient(45deg,#7c4dff,#00ffcc);
-  color:black;
-  font-weight:bold;
-  text-decoration:none;
-  transition:0.3s;
-}
-
 .insta:hover{
   transform:scale(1.05);
 }
