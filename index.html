@@ -5,139 +5,235 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Moodz Clothes</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+
 <style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0a0a0a;
-  color: white;
+:root{
+  --bg:#0a0a0a;
+  --card:#151515;
+  --card-hover:#1f1f1f;
+  --accent:#00ff99;
+  --text:#ffffff;
+  --muted:#aaaaaa;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:'Montserrat',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  scroll-behavior:smooth;
+}
+
+/* NAV */
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 25px;
+  background:rgba(0,0,0,0.65);
+  backdrop-filter: blur(10px);
+  z-index:1000;
+}
+
+nav h2{
+  margin:0;
+  letter-spacing:3px;
+  font-size:18px;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:15px;
+  font-size:13px;
+  opacity:0.8;
+}
+
+nav a:hover{
+  opacity:1;
+  color:var(--accent);
 }
 
 /* HERO */
-.hero {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background: radial-gradient(circle at top, #1a1a1a, #000);
+.hero{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background:radial-gradient(circle at top, #1a1a1a, #000);
+  padding:0 20px;
 }
 
-.hero h1 {
-  font-size: 60px;
-  letter-spacing: 5px;
-  margin: 0;
+.hero h1{
+  font-size:64px;
+  margin:0;
+  letter-spacing:6px;
 }
 
-.hero p {
-  color: #aaa;
-  margin-top: 10px;
+.hero span{
+  color:var(--accent);
 }
 
-.btn {
-  margin-top: 20px;
-  padding: 12px 25px;
-  border: none;
-  background: white;
-  color: black;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
+.hero p{
+  color:var(--muted);
+  margin-top:10px;
+  font-size:15px;
 }
 
-.btn:hover {
-  background: #00ff99;
+.btn{
+  margin-top:25px;
+  padding:12px 28px;
+  border:none;
+  background:white;
+  color:black;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
 }
 
-/* COLLECTION */
-.section {
-  padding: 60px 20px;
-  text-align: center;
+.btn:hover{
+  background:var(--accent);
+  transform:scale(1.05);
 }
 
-.section h2 {
-  font-size: 30px;
-  margin-bottom: 30px;
+/* SECTIONS */
+section{
+  padding:80px 20px;
+  text-align:center;
 }
 
-.products {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
+h2{
+  font-size:28px;
+  margin-bottom:40px;
 }
 
-.card {
-  background: #161616;
-  padding: 20px;
-  width: 240px;
-  border-radius: 15px;
-  transition: 0.3s;
+/* PRODUCTS */
+.products{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:20px;
 }
 
-.card:hover {
-  transform: scale(1.08);
-  background: #222;
+.card{
+  background:var(--card);
+  padding:20px;
+  width:250px;
+  border-radius:15px;
+  transition:0.3s;
+  position:relative;
 }
 
-.price {
-  color: #00ff99;
-  font-weight: bold;
-  margin: 10px 0;
+.card:hover{
+  transform:translateY(-8px);
+  background:var(--card-hover);
+}
+
+.card::before{
+  content:"DROP";
+  position:absolute;
+  top:10px;
+  right:-30px;
+  transform:rotate(45deg);
+  background:var(--accent);
+  color:black;
+  font-size:10px;
+  padding:5px 40px;
+  font-weight:bold;
+}
+
+.price{
+  color:var(--accent);
+  font-weight:bold;
+  margin:10px 0;
+}
+
+.card button{
+  width:100%;
 }
 
 /* ABOUT */
-.about {
-  padding: 60px 20px;
-  text-align: center;
-  background: #111;
-  color: #bbb;
+.about{
+  background:#111;
+  color:var(--muted);
+  padding:80px 20px;
 }
 
 /* CTA */
-.cta {
-  text-align: center;
-  padding: 60px 20px;
+.cta a{
+  display:inline-block;
+  margin-top:10px;
+  padding:12px 28px;
+  background:white;
+  color:black;
+  text-decoration:none;
+  font-weight:bold;
+  transition:0.3s;
 }
 
-.cta a {
-  text-decoration: none;
-  padding: 12px 25px;
-  background: white;
-  color: black;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.cta a:hover {
-  background: #00ff99;
+.cta a:hover{
+  background:var(--accent);
 }
 
 /* FOOTER */
-footer {
-  text-align: center;
-  padding: 30px;
-  color: #666;
+footer{
+  padding:25px;
+  text-align:center;
+  color:#666;
+  border-top:1px solid #222;
+  font-size:12px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .hero h1{
+    font-size:38px;
+  }
+
+  .products{
+    flex-direction:column;
+    align-items:center;
+  }
 }
 </style>
-
 </head>
 
 <body>
 
+<nav>
+  <h2>MOODZ</h2>
+  <div>
+    <a href="#shop">Shop</a>
+    <a href="#about">About</a>
+    <a href="#contact">Instagram</a>
+  </div>
+</nav>
+
 <!-- HERO -->
 <div class="hero">
-  <h1>MOODZ CLOTHES</h1>
-  <p>Your Mood. Your Style. Your Streetwear.</p>
+  <h1>MOODZ <span>CLOTHES</span></h1>
+  <p>Streetwear • Oversize • Limited Drops</p>
   <button class="btn" onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">
     SHOP NOW
   </button>
 </div>
 
-<!-- COLLECTION -->
-<div class="section" id="shop">
-  <h2>🔥 DROP 01</h2>
+<!-- SHOP -->
+<section id="shop">
+  <h2>DROP 01</h2>
 
   <div class="products">
 
@@ -148,7 +244,7 @@ footer {
     </div>
 
     <div class="card">
-      <h3>T-Shirt Loose Fit</h3>
+      <h3>T-Shirt Loose</h3>
       <p class="price">19,99€</p>
       <button class="btn">Commander</button>
     </div>
@@ -160,26 +256,25 @@ footer {
     </div>
 
   </div>
-</div>
+</section>
 
 <!-- ABOUT -->
-<div class="about">
-  <h2>ABOUT US</h2>
+<section class="about" id="about">
+  <h2>ABOUT</h2>
   <p>
-    Moodz Clothes est une marque streetwear inspirée par les vibes, l’attitude et la liberté.
-    Chaque pièce représente un mood différent.
+    Moodz Clothes est une marque streetwear inspirée des émotions, des vibes et de la culture urbaine.
+    Chaque pièce représente un état d’esprit.
   </p>
-</div>
+</section>
 
-<!-- CTA -->
-<div class="cta">
-  <h2>FOLLOW THE BRAND</h2>
-  <a href="#" target="_blank">Instagram</a>
-</div>
+<!-- INSTAGRAM -->
+<section class="cta" id="contact">
+  <h2>FOLLOW US</h2>
+  <a href="#">INSTAGRAM</a>
+</section>
 
-<!-- FOOTER -->
 <footer>
-  © 2026 Moodz Clothes — Streetwear Brand
+  © 2026 Moodz Clothes — All rights reserved
 </footer>
 
 </body>
