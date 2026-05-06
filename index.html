@@ -2,98 +2,158 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Moodz Clothes</title>
+<title>Moodz Clothes — Streetwear</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
+:root{
+  --bg:#0a0a0d;
+  --card:#14141c;
+  --accent:#00ffcc;
+}
+
+*{box-sizing:border-box}
+
 body{
   margin:0;
-  font-family:Arial, sans-serif;
-  background:#0b0b0f;
+  font-family: 'Arial', sans-serif;
+  background:var(--bg);
   color:white;
 }
 
+/* HEADER */
 header{
-  padding:30px;
+  padding:40px 20px;
   text-align:center;
-  font-size:32px;
-  font-weight:bold;
 }
 
+header h1{
+  font-size:40px;
+  letter-spacing:2px;
+  margin:0;
+}
+
+header p{
+  color:#aaa;
+  margin-top:10px;
+}
+
+/* GRID */
 .products{
+  max-width:1200px;
+  margin:auto;
+  padding:20px;
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:25px;
-  padding:30px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
 }
 
+/* CARD */
 .card{
-  background:#14141c;
-  border-radius:15px;
-  padding:15px;
-  text-align:center;
+  background:var(--card);
+  border-radius:18px;
+  overflow:hidden;
+  transition:transform .3s;
+}
+
+.card:hover{
+  transform:translateY(-6px);
 }
 
 .card img{
   width:100%;
-  border-radius:12px;
+  height:320px;
+  object-fit:cover;
 }
 
-.card h3{
-  margin:15px 0 5px;
+.card-content{
+  padding:20px;
 }
 
-.card p{
-  color:#00ffcc;
+.card-content h3{
+  margin:0;
+  font-size:20px;
 }
 
-.card a{
+.price{
+  color:var(--accent);
+  font-weight:bold;
+  margin:8px 0;
+}
+
+.card-content a{
   display:block;
-  margin-top:10px;
-  padding:12px;
+  margin-top:15px;
+  padding:14px;
+  text-align:center;
   background:white;
   color:black;
   text-decoration:none;
   font-weight:bold;
+  border-radius:10px;
+}
+
+/* FOOTER */
+footer{
+  margin-top:50px;
+  padding:30px;
+  text-align:center;
+  font-size:14px;
+  color:#777;
 }
 </style>
 </head>
 
 <body>
 
-<header>MOODZ CLOTHES</header>
+<header>
+  <h1>MOODZ CLOTHES</h1>
+  <p>Streetwear oversize • Vibe du moment</p>
+</header>
 
 <section class="products">
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1520975916090-3105956dac38?auto=format&fit=crop&w=500&q=80">
+<img src="https://images.unsplash.com/photo-1520975916090-3105956dac38?auto=format&fit=crop&w=800&q=80">
+<div class="card-content">
 <h3>Tee-shirt Noir</h3>
-<p>19,99€</p>
-<a href="tee-noir-simple.html">Voir</a>
+<div class="price">19,99€</div>
+<a href="tee-noir-simple.html">Voir le produit</a>
+</div>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=500&q=80">
+<img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=800&q=80">
+<div class="card-content">
 <h3>Tee-shirt Noir Détails</h3>
-<p>24,99€</p>
-<a href="tee-noir-details.html">Voir</a>
+<div class="price">24,99€</div>
+<a href="tee-noir-details.html">Voir le produit</a>
+</div>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=500&q=80">
+<img src="https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=800&q=80">
+<div class="card-content">
 <h3>Tee-shirt Blanc</h3>
-<p>19,99€</p>
-<a href="tee-blanc-simple.html">Voir</a>
+<div class="price">19,99€</div>
+<a href="tee-blanc-simple.html">Voir le produit</a>
+</div>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?auto=format&fit=crop&w=500&q=80">
+<img src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?auto=format&fit=crop&w=800&q=80">
+<div class="card-content">
 <h3>Tee-shirt Blanc Détails</h3>
-<p>24,99€</p>
-<a href="tee-blanc-details.html">Voir</a>
+<div class="price">24,99€</div>
+<a href="tee-blanc-details.html">Voir le produit</a>
+</div>
 </div>
 
 </section>
+
+<footer>
+© 2026 Moodz Clothes — @moodzclothes
+</footer>
 
 </body>
 </html>
