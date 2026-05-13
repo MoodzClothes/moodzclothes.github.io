@@ -1,205 +1,250 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Moodz Clothes</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>MOODZ CLOTHES</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #ffffff;
-      color: #000000;
-    }
+<style>
+:root{
+  --black:#0b0b0b;
+  --white:#ffffff;
+  --grey:#8f8f8f;
+  --acid:#4cff6a;
+}
 
-    /* ===== GLOBAL ===== */
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-    h1, h2 {
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
+body{
+  background:var(--black);
+  color:var(--white);
+  overflow-x:hidden;
+}
 
-    /* ===== HERO ===== */
-    .hero {
-      height: 100vh;
-      background: linear-gradient(120deg, #000000, #1a1a1a);
-      color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 20px;
-    }
+/* ===== NOISE EFFECT ===== */
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity:0.06;
+  pointer-events:none;
+}
 
-    .hero h1 {
-      font-size: 60px;
-      margin: 0;
-    }
+/* ===== NAV ===== */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:25px 60px;
+  display:flex;
+  justify-content:space-between;
+  z-index:100;
+  mix-blend-mode:difference;
+}
 
-    .hero p {
-      margin-top: 20px;
-      font-size: 18px;
-      opacity: 0.8;
-    }
+nav span{
+  font-size:14px;
+  letter-spacing:4px;
+}
 
-    .hero .btn {
-      margin-top: 40px;
-      padding: 15px 40px;
-      border: 2px solid white;
-      color: white;
-      font-weight: bold;
-    }
+/* ===== HERO ===== */
+.hero{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  padding:0 8%;
+}
 
-    /* ===== SECTION ===== */
-    section {
-      padding: 80px 40px;
-      max-width: 1200px;
-      margin: auto;
-    }
+.hero h1{
+  font-size:clamp(60px,12vw,160px);
+  line-height:0.9;
+  text-transform:uppercase;
+}
 
-    /* ===== PRODUCTS ===== */
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 40px;
-      margin-top: 40px;
-    }
+.hero h1 span{
+  color:var(--acid);
+}
 
-    .product {
-      border: 1px solid #e5e5e5;
-      padding: 20px;
-      text-align: center;
-      transition: transform 0.3s;
-    }
+/* ===== SCROLL TEXT ===== */
+.scroll-text{
+  position:absolute;
+  bottom:40px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:12px;
+  letter-spacing:3px;
+  color:var(--grey);
+}
 
-    .product:hover {
-      transform: translateY(-5px);
-    }
+/* ===== SECTION ===== */
+section{
+  padding:160px 8%;
+}
 
-    .product img {
-      width: 100%;
-      max-width: 250px;
-    }
+/* ===== COLLECTION ===== */
+.collection{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:100px;
+}
 
-    .product h3 {
-      margin-top: 20px;
-    }
+.item{
+  position:relative;
+}
 
-    /* ===== CONCEPT ===== */
-    .concept {
-      background: #f5f5f5;
-      text-align: center;
-    }
+.item img{
+  width:100%;
+  filter:grayscale(100%);
+  transition:0.6s;
+}
 
-    .concept p {
-      max-width: 700px;
-      margin: auto;
-      line-height: 1.8;
-      opacity: 0.9;
-    }
+.item:hover img{
+  filter:grayscale(0%);
+  transform:scale(1.02);
+}
 
-    /* ===== DETAILS ===== */
-    .details {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 30px;
-      text-align: center;
-    }
+.item h3{
+  margin-top:25px;
+  font-size:22px;
+}
 
-    .detail-box {
-      border: 1px solid #ddd;
-      padding: 30px;
-    }
+.item p{
+  color:var(--grey);
+  font-size:14px;
+  margin-top:8px;
+}
 
-    /* ===== FOOTER ===== */
-    footer {
-      background: #000;
-      color: white;
-      text-align: center;
-      padding: 40px;
-      margin-top: 80px;
-    }
-  </style>
+/* ===== STATEMENT ===== */
+.statement{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:100px;
+}
+
+.statement h2{
+  font-size:64px;
+  line-height:1;
+}
+
+.statement p{
+  color:var(--grey);
+  font-size:16px;
+  line-height:1.9;
+}
+
+/* ===== BIG WORD ===== */
+.big-word{
+  font-size:22vw;
+  font-weight:900;
+  opacity:0.03;
+  text-align:center;
+  user-select:none;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  padding:120px 8%;
+  border-top:1px solid #222;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+}
+
+footer p{
+  color:var(--grey);
+  line-height:1.8;
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:900px){
+  .statement{
+    grid-template-columns:1fr;
+  }
+  footer{
+    grid-template-columns:1fr;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- HERO -->
-  <div class="hero">
-    <h1>MOODZ CLOTHES</h1>
-    <p>Streetwear • Oversize • Attitude</p>
-    <a href="#collection" class="btn">View Collection</a>
+<nav>
+  <span>MOODZ</span>
+  <span>STREETWEAR</span>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>WEAR<br><span>YOUR</span><br>MOOD</h1>
+</div>
+
+<div class="scroll-text">SCROLL ↓</div>
+
+<!-- COLLECTION -->
+<section>
+  <div class="collection">
+
+    <a href="product-white.html" class="item">
+      <img src="images/white.png">
+      <h3>MOODZ BASIC — WHITE</h3>
+      <p>Oversize / Clean / Daily</p>
+    </a>
+
+    <a href="product-black.html" class="item">
+      <img src="images/black.png">
+      <h3>MOODZ BASIC — BLACK</h3>
+      <p>Dark / Street / Essential</p>
+    </a>
+
+    <a href="product-grey.html" class="item">
+      <img src="images/grey.png">
+      <h3>MOODZ BASIC — GREY</h3>
+      <p>Urban / Neutral / Modern</p>
+    </a>
+
   </div>
+</section>
 
-  <!-- COLLECTION -->
-  <section id="collection">
-    <h2>Basic Collection</h2>
+<!-- STATEMENT -->
+<section>
+  <div class="statement">
+    <h2>
+      NOT A BRAND.<br>
+      A STATE OF MIND.
+    </h2>
 
-    <div class="products">
-
-      <a href="product-white.html" class="product">
-        <img src="images/white.png" alt="Moodz White">
-        <h3>Moodz Basic — White</h3>
-        <p>Minimal / Oversize</p>
-      </a>
-
-      <a href="product-black.html" class="product">
-        <img src="images/black.png" alt="Moodz Black">
-        <h3>Moodz Basic — Black</h3>
-        <p>Street / Essential</p>
-      </a>
-
-      <a href="product-grey.html" class="product">
-        <img src="images/grey.png" alt="Moodz Grey">
-        <h3>Moodz Basic — Dark Grey</h3>
-        <p>Urban / Modern</p>
-      </a>
-
-    </div>
-  </section>
-
-  <!-- CONCEPT -->
-  <section class="concept">
-    <h2>Concept</h2>
     <p>
-      Moodz Clothes est une marque streetwear indépendante.
-      Chaque pièce représente un état d’esprit.
-      Des designs simples à l’avant, une identité forte derrière.
-      Wear your mood.
+      Moodz Clothes n’est pas là pour suivre les tendances.
+      Chaque pièce est pensée comme une extension de ton état d’esprit.
+      Simple devant. Chargé derrière.
+      Rien d’inutile.
     </p>
-  </section>
+  </div>
+</section>
 
-  <!-- DETAILS -->
-  <section>
-    <h2>Details</h2>
+<!-- BIG WORD -->
+<div class="big-word">MOODZ</div>
 
-    <div class="details">
-      <div class="detail-box">Oversize fit</div>
-      <div class="detail-box">Minimal design</div>
-      <div class="detail-box">Streetwear culture</div>
-      <div class="detail-box">Moodz identity</div>
-    </div>
-  </section>
+<!-- FOOTER -->
+<footer>
+  <p>
+    Independent streetwear project.<br>
+    Designed for the new generation.<br>
+    No noise. No rules.
+  </p>
 
-  <!-- SOCIAL -->
-  <section class="concept">
-    <h2>Social</h2>
-    <p>
-      Coming soon on TikTok<br>
-      @moodzclothes
-    </p>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    © Moodz Clothes — All rights reserved
-  </footer>
+  <p>
+    TikTok — @moodzclothes (soon)<br>
+    © Moodz Clothes
+  </p>
+</footer>
 
 </body>
 </html>
