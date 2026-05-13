@@ -1,273 +1,205 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<title>Moodz Clothes – Streetwear Oversize</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Moodz Clothes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-:root{
-  --black:#0b0b0f;
-  --white:#ffffff;
-  --green:#00ffcc;
-  --dark:#111118;
-  --gray:#a0a0a0;
-}
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff;
+      color: #000000;
+    }
 
-*{box-sizing:border-box}
+    /* ===== GLOBAL ===== */
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-body{
-  margin:0;
-  font-family:Arial, Helvetica, sans-serif;
-  background:var(--black);
-  color:var(--white);
-}
+    h1, h2 {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
 
-/* ===== GLOBAL ===== */
-section{
-  padding:80px 20px;
-}
+    /* ===== HERO ===== */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(120deg, #000000, #1a1a1a);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
 
-.container{
-  max-width:1300px;
-  margin:auto;
-}
+    .hero h1 {
+      font-size: 60px;
+      margin: 0;
+    }
 
-h2{
-  font-size:36px;
-  margin-bottom:20px;
-}
+    .hero p {
+      margin-top: 20px;
+      font-size: 18px;
+      opacity: 0.8;
+    }
 
-p{
-  color:var(--gray);
-  line-height:1.6;
-}
+    .hero .btn {
+      margin-top: 40px;
+      padding: 15px 40px;
+      border: 2px solid white;
+      color: white;
+      font-weight: bold;
+    }
 
-/* ===== HEADER ===== */
-header{
-  min-height:100vh;
-  background:
-    radial-gradient(circle at top,rgba(0,255,204,0.15),transparent 60%),
-    linear-gradient(135deg,#000,#0f0f18);
-  display:flex;
-  align-items:center;
-}
+    /* ===== SECTION ===== */
+    section {
+      padding: 80px 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-.hero{
-  text-align:center;
-}
+    /* ===== PRODUCTS ===== */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-top: 40px;
+    }
 
-.hero h1{
-  font-size:60px;
-  letter-spacing:3px;
-}
+    .product {
+      border: 1px solid #e5e5e5;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
 
-.hero span{
-  color:var(--green);
-}
+    .product:hover {
+      transform: translateY(-5px);
+    }
 
-.hero p{
-  max-width:600px;
-  margin:20px auto;
-  font-size:18px;
-}
+    .product img {
+      width: 100%;
+      max-width: 250px;
+    }
 
-.hero a{
-  display:inline-block;
-  margin-top:30px;
-  padding:18px 40px;
-  background:var(--green);
-  color:black;
-  text-decoration:none;
-  font-weight:bold;
-  border-radius:50px;
-}
+    .product h3 {
+      margin-top: 20px;
+    }
 
-/* ===== MARQUE ===== */
-.brand{
-  background:var(--dark);
-  border-top:1px solid #1f1f2e;
-  border-bottom:1px solid #1f1f2e;
-}
+    /* ===== CONCEPT ===== */
+    .concept {
+      background: #f5f5f5;
+      text-align: center;
+    }
 
-/* ===== PRODUITS ===== */
-.products{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:40px;
-}
+    .concept p {
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.8;
+      opacity: 0.9;
+    }
 
-.card{
-  background:white;
-  color:black;
-  border-radius:25px;
-  overflow:hidden;
-  transition:0.4s;
-}
+    /* ===== DETAILS ===== */
+    .details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      text-align: center;
+    }
 
-.card:hover{
-  transform:translateY(-12px);
-}
+    .detail-box {
+      border: 1px solid #ddd;
+      padding: 30px;
+    }
 
-.card img{
-  width:100%;
-  height:340px;
-  object-fit:cover;
-}
-
-.card-content{
-  padding:25px;
-}
-
-.card h3{
-  margin:0 0 10px;
-}
-
-.price{
-  font-weight:bold;
-}
-
-.card a{
-  display:block;
-  margin-top:15px;
-  padding:14px;
-  background:black;
-  color:white;
-  text-decoration:none;
-  text-align:center;
-  border-radius:12px;
-}
-
-/* ===== BANNERS ===== */
-.banner{
-  background:linear-gradient(120deg,var(--green),#1aff8c);
-  color:black;
-  padding:60px;
-  border-radius:30px;
-  text-align:center;
-}
-
-/* ===== DETAILS ===== */
-.details{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:30px;
-}
-
-.detail{
-  background:#14141d;
-  padding:30px;
-  border-radius:20px;
-  border:1px solid #1f1f2e;
-}
-
-/* ===== FOOTER ===== */
-footer{
-  padding:50px 20px;
-  text-align:center;
-  background:#000;
-  border-top:1px solid #1f1f2e;
-}
-
-footer a{
-  color:var(--green);
-  text-decoration:none;
-  font-weight:bold;
-}
-</style>
+    /* ===== FOOTER ===== */
+    footer {
+      background: #000;
+      color: white;
+      text-align: center;
+      padding: 40px;
+      margin-top: 80px;
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-  <div class="container hero">
-    <h1>MOODZ <span>CLOTHES</span></h1>
-    <p>Streetwear oversize inspiré par la rue, la liberté et l’attitude.</p>
-    <a href="#shop">Découvrir la collection</a>
+  <!-- HERO -->
+  <div class="hero">
+    <h1>MOODZ CLOTHES</h1>
+    <p>Streetwear • Oversize • Attitude</p>
+    <a href="#collection" class="btn">View Collection</a>
   </div>
-</header>
 
-<section class="brand">
-  <div class="container">
-    <h2>UNE MARQUE. UNE VIBE.</h2>
-    <p>
-      Moodz Clothes représente l’expression personnelle à travers des coupes oversize,
-      des matières confortables et une identité visuelle forte.
-    </p>
-  </div>
-</section>
-
-<section id="shop">
-  <div class="container">
-    <h2>LA COLLECTION</h2>
+  <!-- COLLECTION -->
+  <section id="collection">
+    <h2>Basic Collection</h2>
 
     <div class="products">
 
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38">
-        <div class="card-content">
-          <h3>Tee-shirt Noir Oversize</h3>
-          <div class="price">19,99€</div>
-          <a href="tee-noir-simple.html">Voir</a>
-        </div>
-      </div>
+      <a href="product-white.html" class="product">
+        <img src="images/white.png" alt="Moodz White">
+        <h3>Moodz Basic — White</h3>
+        <p>Minimal / Oversize</p>
+      </a>
 
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990">
-        <div class="card-content">
-          <h3>Noir Oversize – Détails</h3>
-          <div class="price">24,99€</div>
-          <a href="tee-noir-details.html">Voir</a>
-        </div>
-      </div>
+      <a href="product-black.html" class="product">
+        <img src="images/black.png" alt="Moodz Black">
+        <h3>Moodz Basic — Black</h3>
+        <p>Street / Essential</p>
+      </a>
 
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1523381294911-8d3cead13475">
-        <div class="card-content">
-          <h3>Blanc Oversize</h3>
-          <div class="price">19,99€</div>
-          <a href="tee-blanc-simple.html">Voir</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb">
-        <div class="card-content">
-          <h3>Blanc Oversize – Détails</h3>
-          <div class="price">24,99€</div>
-          <a href="tee-blanc-details.html">Voir</a>
-        </div>
-      </div>
+      <a href="product-grey.html" class="product">
+        <img src="images/grey.png" alt="Moodz Grey">
+        <h3>Moodz Basic — Dark Grey</h3>
+        <p>Urban / Modern</p>
+      </a>
 
     </div>
-  </div>
-</section>
+  </section>
 
-<section>
-  <div class="container banner">
-    <h2>DROP LIMITÉ</h2>
-    <p>Quantités limitées • Style affirmé • Livraison rapide</p>
-  </div>
-</section>
+  <!-- CONCEPT -->
+  <section class="concept">
+    <h2>Concept</h2>
+    <p>
+      Moodz Clothes est une marque streetwear indépendante.
+      Chaque pièce représente un état d’esprit.
+      Des designs simples à l’avant, une identité forte derrière.
+      Wear your mood.
+    </p>
+  </section>
 
-<section>
-  <div class="container">
-    <h2>POURQUOI MOODZ ?</h2>
+  <!-- DETAILS -->
+  <section>
+    <h2>Details</h2>
 
     <div class="details">
-      <div class="detail">✔ Coupe oversize moderne</div>
-      <div class="detail">✔ Style urbain premium</div>
-      <div class="detail">✔ Confort maximal</div>
-      <div class="detail">✔ Identité forte</div>
+      <div class="detail-box">Oversize fit</div>
+      <div class="detail-box">Minimal design</div>
+      <div class="detail-box">Streetwear culture</div>
+      <div class="detail-box">Moodz identity</div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer>
-  © Moodz Clothes  
-  <br>
-  <a href="https://instagram.com/moodzclothes" target="_blank">Instagram</a>
-</footer>
+  <!-- SOCIAL -->
+  <section class="concept">
+    <h2>Social</h2>
+    <p>
+      Coming soon on TikTok<br>
+      @moodzclothes
+    </p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © Moodz Clothes — All rights reserved
+  </footer>
 
 </body>
 </html>
